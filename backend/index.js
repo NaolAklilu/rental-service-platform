@@ -3,6 +3,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRoutes from "./routes/user.js";
+import carRoutes from "./routes/car.js";
+import houseRoutes from "./routes/house.js";
 
 dotenv.config();
 
@@ -14,6 +16,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/user", userRoutes);
+app.use("/car", carRoutes);
+app.use("/house", houseRoutes);
 
 const startServer = async () => {
   try {
